@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Document
+    link(rel="stylesheet" href="styling/style.css")
+  body
+    .createyourhuman
+      .createyourhuman__header
+        h2.createyourhuman__logo
+          | Have fun and
+          br
+          span createyourhuman
+
+        ul.createyourhuman__header-list
+          li.createyourhuman__header-item Create
+          li.createyourhuman__header-item About
+          li.createyourhuman__header-item Developer
+
+      .createyourhuman__content
+        .createyourhuman__left
+          .output
+            g.person(style="max-width: 500px;display: flex;flex-direction: column;align-items: center;")
+              g.person__head(style="transform: translate(2%, 21%);z-index: -1;")
+              g.person__body
+              g.person__bottom(style="transform: translate(2%, -33%);z-index: -1;")
+
+          .createyourhuman__btn GET CODE
+
+        .createyourhuman__settings
+          .createyourhuman__settings-container
+            img.createyourhuman__left-arrow(src="" alt="arrow")
+            .createyourhuman__settings-list.head-list
+            img.createyourhuman__right-arrow(src="" alt="arrow")
+          .createyourhuman__settings-container.createyourhuman__settings-container--body
+            img.createyourhuman__left-arrow(src="" alt="arrow")
+            .createyourhuman__settings-list.body-list
+            img.createyourhuman__right-arrow(src="" alt="arrow")
+          .createyourhuman__settings-container.createyourhuman__settings-container--bottom
+            img.createyourhuman__left-arrow(src="" alt="arrow")
+            .createyourhuman__settings-list.bottom-list
+            img.createyourhuman__right-arrow(src="" alt="arrow")
+
+      .createyourhuman__about
+        h2 About 
+          span createyourhuman
+        p 	I created this website to help other developers and designers generate svg characters and 
+          | please put some words here so that you can create more words and more phrases and sentences as
+          | we want to ut some words here so that you can create more words . created with 
+          span humaaaans library
+          | ,check their website as they have a lot of cool vector graphic designs!
+
+        h2 Support me and 
+          span share it with your friends!
+        p 	Your support is very much appreciated! Thank you for using and sharing my website! Have 
+          | a good day! Here are more words to put.
+
+        .createyourhuman__btn-list.btn
+          p fb here
+          p twitter here
+          p copy link here
+
+    script(src="js/data.js")
+    script(src="js/index.js")
