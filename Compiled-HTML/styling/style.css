@@ -1,13 +1,210 @@
+/* variables */
+/* reset styles */
+html,
+body {
+  font-size: 10px;
+}
+
+* {
+  margin: 0;
+  line-height: 1.4;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
 .createyourhuman {
   width: 94%;
   max-width: 1100px;
   margin: 0 auto;
 }
 
+.createyourhuman__header {
+  width: 100%;
+  padding: 35px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.createyourhuman__header h2 {
+  font-size: 3.5rem;
+  font-weight: normal;
+  color: #cccccc;
+  line-height: 0.5;
+}
+
+.createyourhuman__header h2 span {
+  font-size: 4rem;
+  color: #882bd8;
+}
+
+.createyourhuman__header-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.createyourhuman__header-item {
+  font-size: 2rem;
+  color: #cccccc;
+  margin-left: 50px;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.createyourhuman__header-item:hover {
+  color: #882bd8;
+}
+
 .createyourhuman__content {
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.createyourhuman__left {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.createyourhuman__left::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: auto;
+  top: auto;
+  right: 50%;
+  bottom: 15%;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+  width: 400px;
+  height: 460px;
+  background: url("../img/human-bg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.createyourhuman__settings {
+  width: 100%;
+  max-width: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 40px;
+}
+
+.createyourhuman__settings-container {
+  position: relative;
+  width: 260px;
+  height: 80px;
+  margin-bottom: 5px;
+  background-color: #f2f2f2;
+}
+
+.createyourhuman__settings-container:nth-of-type(2) {
+  height: 115px;
+}
+
+.createyourhuman__settings-container:last-of-type {
+  height: 200px;
+}
+
+.createyourhuman__settings-list {
+  width: 5000px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.createyourhuman__settings-list-container {
+  width: 125px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.createyourhuman__settings-list svg {
+  height: 90%;
+  width: 125px;
+  display: inline-block;
+}
+
+.createyourhuman__arrow {
+  position: absolute;
+  left: -40px;
+  bottom: 50%;
+  width: 15px;
+  height: 15px;
+  border: solid #cccccc;
+  border-width: 1px 1px 0 0;
+  -webkit-transform: translateY(50%) rotate(-135deg);
+          transform: translateY(50%) rotate(-135deg);
+  cursor: pointer;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.createyourhuman__arrow--right {
+  left: auto;
+  right: -40px;
+  -webkit-transform: translateY(50%) rotate(45deg);
+          transform: translateY(50%) rotate(45deg);
+}
+
+.createyourhuman__arrow:hover {
+  border-color: #882bd8;
 }
 
 .createyourhuman__about {

@@ -11,18 +11,18 @@ html(lang="en")
         h2.createyourhuman__logo
           | Have fun and
           br
-          span createyourhuman
+          span createyourhuman.
 
-        ul.createyourhuman__header-list
-          li.createyourhuman__header-item Create
-          li.createyourhuman__header-item About
-          li.createyourhuman__header-item Developer
+        .createyourhuman__header-list
+          a.createyourhuman__header-item(href="#") Create
+          a.createyourhuman__header-item(href="#") About
+          a.createyourhuman__header-item(href="#") Developer
 
       .createyourhuman__content
         .createyourhuman__left
           .output
             g.person(style="max-width: 500px;display: flex;flex-direction: column;align-items: center;")
-              g.person__head(style="transform: translate(2%, 21%);z-index: -1;")
+              g.person__head(style="transform: translate(1%, 23%);z-index: -1;")
               g.person__body
               g.person__bottom(style="transform: translate(2%, -33%);z-index: -1;")
 
@@ -30,17 +30,20 @@ html(lang="en")
 
         .createyourhuman__settings
           .createyourhuman__settings-container
-            img.createyourhuman__left-arrow(src="" alt="arrow")
-            .createyourhuman__settings-list.head-list
-            img.createyourhuman__right-arrow(src="" alt="arrow")
+            span.createyourhuman__arrow.head-arrow(src="" alt="arrow")
+            .createyourhuman__settings-list-container
+              .createyourhuman__settings-list.head-list
+            span.createyourhuman__arrow.createyourhuman__arrow--right.head-arrow(src="" alt="arrow")
           .createyourhuman__settings-container.createyourhuman__settings-container--body
-            img.createyourhuman__left-arrow(src="" alt="arrow")
-            .createyourhuman__settings-list.body-list
-            img.createyourhuman__right-arrow(src="" alt="arrow")
+            span.createyourhuman__arrow.body-arrow(src="" alt="arrow")
+            .createyourhuman__settings-list-container
+              .createyourhuman__settings-list.body-list
+            span.createyourhuman__arrow.createyourhuman__arrow--right.body-arrow(src="" alt="arrow")
           .createyourhuman__settings-container.createyourhuman__settings-container--bottom
-            img.createyourhuman__left-arrow(src="" alt="arrow")
-            .createyourhuman__settings-list.bottom-list
-            img.createyourhuman__right-arrow(src="" alt="arrow")
+            span.createyourhuman__arrow.bottom-arrow(src="" alt="arrow")
+            .createyourhuman__settings-list-container
+              .createyourhuman__settings-list.bottom-list
+            span.createyourhuman__arrow.createyourhuman__arrow--right.bottom-arrow(src="" alt="arrow")
 
       .createyourhuman__about
         h2 About 
