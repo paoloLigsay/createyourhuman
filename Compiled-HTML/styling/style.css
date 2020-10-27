@@ -1,14 +1,25 @@
 /* variables */
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
+/* mixins */
 /* reset styles */
 html,
 body {
   font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+@media screen and (max-width: 767px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
 }
 
 * {
   margin: 0;
   line-height: 1.4;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 a {
@@ -19,6 +30,32 @@ ul {
   list-style-type: none;
 }
 
+/* globals */
+.sp-only {
+  display: none !important;
+}
+
+@media screen and (max-width: 767px) {
+  .sp-only {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
+}
+
+.sp-none {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+@media screen and (max-width: 767px) {
+  .sp-none {
+    display: none !important;
+  }
+}
+
+/* content */
 .createyourhuman {
   width: 94%;
   max-width: 1100px;
@@ -40,14 +77,13 @@ ul {
 }
 
 .createyourhuman__header h2 {
-  font-size: 3.5rem;
-  font-weight: normal;
+  font-size: 2rem;
   color: #cccccc;
   line-height: 0.5;
 }
 
 .createyourhuman__header h2 span {
-  font-size: 4rem;
+  font-size: 2.5rem;
   color: #882bd8;
 }
 
@@ -60,9 +96,15 @@ ul {
           align-items: center;
 }
 
+@media screen and (max-width: 767px) {
+  .createyourhuman__header-list {
+    display: none;
+  }
+}
+
 .createyourhuman__header-item {
-  font-size: 2rem;
-  color: #cccccc;
+  font-size: 1.8rem;
+  color: #333;
   margin-left: 50px;
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
@@ -75,7 +117,7 @@ ul {
 .createyourhuman__content {
   width: 100%;
   max-width: 900px;
-  margin: 0 auto;
+  margin: 0 auto 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -85,6 +127,18 @@ ul {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+}
+
+@media screen and (max-width: 767px) {
+  .createyourhuman__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .createyourhuman__left {
@@ -115,9 +169,16 @@ ul {
           transform: translateX(50%);
   width: 400px;
   height: 460px;
-  background: url("../img/human-bg.png");
+  background: url("../img/human-bg2.png");
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 767px) {
+  .createyourhuman__left::before {
+    width: 100%;
+    bottom: 0;
+  }
 }
 
 .createyourhuman__settings {
@@ -136,20 +197,47 @@ ul {
   padding-top: 40px;
 }
 
+@media screen and (max-width: 767px) {
+  .createyourhuman__settings {
+    padding: 0 0 20px;
+  }
+}
+
 .createyourhuman__settings-container {
   position: relative;
   width: 260px;
   height: 80px;
   margin-bottom: 5px;
   background-color: #f2f2f2;
+  -webkit-box-shadow: 0 0 25px -10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 25px -10px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 767px) {
+  .createyourhuman__settings-container {
+    height: 60px;
+    width: 70%;
+  }
 }
 
 .createyourhuman__settings-container:nth-of-type(2) {
   height: 115px;
 }
 
+@media screen and (max-width: 767px) {
+  .createyourhuman__settings-container:nth-of-type(2) {
+    height: 80px;
+  }
+}
+
 .createyourhuman__settings-container:last-of-type {
   height: 200px;
+}
+
+@media screen and (max-width: 767px) {
+  .createyourhuman__settings-container:last-of-type {
+    height: 80px;
+  }
 }
 
 .createyourhuman__settings-list {
@@ -188,12 +276,18 @@ ul {
   width: 15px;
   height: 15px;
   border: solid #cccccc;
-  border-width: 1px 1px 0 0;
+  border-width: 2px 2px 0 0;
   -webkit-transform: translateY(50%) rotate(-135deg);
           transform: translateY(50%) rotate(-135deg);
   cursor: pointer;
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
+}
+
+@media screen and (max-width: 767px) {
+  .createyourhuman__arrow {
+    left: -20px;
+  }
 }
 
 .createyourhuman__arrow--right {
@@ -203,13 +297,113 @@ ul {
           transform: translateY(50%) rotate(45deg);
 }
 
+@media screen and (max-width: 767px) {
+  .createyourhuman__arrow--right {
+    right: -20px;
+  }
+}
+
 .createyourhuman__arrow:hover {
   border-color: #882bd8;
 }
 
+.createyourhuman__btn {
+  width: 280px;
+  height: 35px;
+  background-color: #fc157e;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+.createyourhuman__btn:hover {
+  background-color: #882bd8;
+}
+
+.createyourhuman__btn-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .createyourhuman__about {
+  position: relative;
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
+}
+
+.createyourhuman__about::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: auto;
+  right: 0;
+  bottom: 0;
+  width: 650px;
+  height: 350px;
+  background: url("../img/about-bg.png");
+  background-size: contain;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+.createyourhuman__about h2 {
+  font-size: 3.6rem;
+  font-weight: normal;
+  color: #333;
+  margin: 50px 0 15px;
+}
+
+.createyourhuman__about h2 span {
+  color: #882bd8;
+}
+
+.createyourhuman__about p {
+  font-size: 1.6rem;
+  line-height: 1.8;
+}
+
+@media screen and (max-width: 767px) {
+  .output {
+    width: 100%;
+  }
+}
+
+.output g.person__bottom svg {
+  width: 400px;
+}
+
+@media screen and (max-width: 767px) {
+  .person {
+    width: 100%;
+  }
+}
+
+.footer {
+  margin-top: 200px;
+  width: 100%;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 1.2rem;
+}
+
+.footer p span {
+  color: #882bd8;
 }
 /*# sourceMappingURL=style.css.map */

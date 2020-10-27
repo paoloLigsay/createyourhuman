@@ -5,8 +5,9 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title Document
     link(rel="stylesheet" href="styling/style.css")
+    link(href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet")
   body
-    .createyourhuman
+    .createyourhuman#create
       .createyourhuman__header
         h2.createyourhuman__logo
           | Have fun and
@@ -14,55 +15,59 @@ html(lang="en")
           span createyourhuman.
 
         .createyourhuman__header-list
-          a.createyourhuman__header-item(href="#") Create
-          a.createyourhuman__header-item(href="#") About
-          a.createyourhuman__header-item(href="#") Developer
+          a.createyourhuman__header-item(href="#about") About
+          a.createyourhuman__header-item(href="paolomartinligsay.netlify.com") Get in touch
 
       .createyourhuman__content
-        .createyourhuman__left
+        .createyourhuman__left(data-aos="fade-up" data-aos-duration="1000")
           .output
             g.person(style="max-width: 500px;display: flex;flex-direction: column;align-items: center;")
               g.person__head(style="transform: translate(1%, 23%);z-index: -1;")
               g.person__body
-              g.person__bottom(style="transform: translate(2%, -33%);z-index: -1;")
+              g.person__bottom(style="transform: translate(1%, -33%);z-index: -1;")
 
-          .createyourhuman__btn GET CODE
+          .createyourhuman__btn.sp-none GET SVG CODE
 
         .createyourhuman__settings
-          .createyourhuman__settings-container
+          .createyourhuman__settings-container(data-aos="fade-left" data-aos-duration="1000")
             span.createyourhuman__arrow.head-arrow(src="" alt="arrow")
             .createyourhuman__settings-list-container
               .createyourhuman__settings-list.head-list
             span.createyourhuman__arrow.createyourhuman__arrow--right.head-arrow(src="" alt="arrow")
-          .createyourhuman__settings-container.createyourhuman__settings-container--body
+          .createyourhuman__settings-container.createyourhuman__settings-container--body(data-aos="fade-left" data-aos-duration="1500")
             span.createyourhuman__arrow.body-arrow(src="" alt="arrow")
             .createyourhuman__settings-list-container
               .createyourhuman__settings-list.body-list
             span.createyourhuman__arrow.createyourhuman__arrow--right.body-arrow(src="" alt="arrow")
-          .createyourhuman__settings-container.createyourhuman__settings-container--bottom
+          .createyourhuman__settings-container.createyourhuman__settings-container--bottom(data-aos="fade-left" data-aos-duration="2000")
             span.createyourhuman__arrow.bottom-arrow(src="" alt="arrow")
             .createyourhuman__settings-list-container
               .createyourhuman__settings-list.bottom-list
             span.createyourhuman__arrow.createyourhuman__arrow--right.bottom-arrow(src="" alt="arrow")
 
-      .createyourhuman__about
-        h2 About 
+        .createyourhuman__btn.sp-only GET SVG CODE
+
+      .createyourhuman__about#about
+        h2(data-aos="fade-up" data-aos-duration="1000") About 
           span createyourhuman
-        p 	I created this website to help other developers and designers generate svg characters and 
-          | please put some words here so that you can create more words and more phrases and sentences as
-          | we want to ut some words here so that you can create more words . created with 
-          span humaaaans library
-          | ,check their website as they have a lot of cool vector graphic designs!
+        p(data-aos="fade-up" data-aos-duration="1000") createyourhuman helps Developers and Designers who wants to input vector base illustrations to their websites as easy as 123. 
+          | It allows you to edit your own vector character and copy it by simply clicking the button and insert it inside your html file.
+          | All Character Designs are from 
+          a(href="https://www.humaaans.com/" target="_blank")
+            | humaaans
+          | , check out their website as they have a lot of great vector graphic designs!
 
-        h2 Support me and 
-          span share it with your friends!
-        p 	Your support is very much appreciated! Thank you for using and sharing my website! Have 
-          | a good day! Here are more words to put.
+        h2(data-aos="fade-up" data-aos-duration="1000") 
+          span Share it 
+          | with your friends!
+        p(data-aos="fade-up" data-aos-duration="1000") 	Your support is very much appreciated! Enjoy and share it with your friends now! 
 
-        .createyourhuman__btn-list.btn
-          p fb here
-          p twitter here
-          p copy link here
+        .createyourhuman__btn-list(data-aos="fade-up" data-aos-duration="1000")
 
+    footer.footer
+      p Developed by 
+        span Paolo Ligsay
+
+    script(src="https://unpkg.com/aos@2.3.1/dist/aos.js")
     script(src="js/data.js")
     script(src="js/index.js")

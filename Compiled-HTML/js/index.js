@@ -1,3 +1,6 @@
+/* run aos */
+AOS.init()
+
 const get = (el) => document.querySelectorAll(el).length > 1 ? document.querySelectorAll(el) : document.querySelector(el)
 
 const outputHead = get('.person__head')
@@ -45,6 +48,11 @@ rightHeadArrow.onclick = () => {
     headTranslate -= 125
     headList.style.transform = `translateX(${headTranslate}px)`
     outputHead.innerHTML = head.data[headCount]
+  } else {
+    headCount = 0
+    headTranslate = 0
+    headList.style.transform = `translateX(${headTranslate}px)`
+    outputHead.innerHTML = head.data[headCount]
   }
 }
 
@@ -52,6 +60,12 @@ leftHeadArrow.onclick = () => {
   if(headCount > 0) {
     headCount--
     headTranslate += 125
+    headList.style.transform = `translateX(${headTranslate}px)`
+    outputHead.innerHTML = head.data[headCount]
+  } else {
+    headCount = head.data.length - 1
+    headTranslate -= 125
+    headTranslate *= head.data.length - 1
     headList.style.transform = `translateX(${headTranslate}px)`
     outputHead.innerHTML = head.data[headCount]
   }
@@ -69,6 +83,11 @@ rightBodyArrow.onclick = () => {
     bodyTranslate -= 125
     bodyList.style.transform = `translateX(${bodyTranslate}px)`
     outputBody.innerHTML = body.data[bodyCount]
+  } else {
+    bodyCount = 0
+    bodyTranslate = 0
+    bodyList.style.transform = `translateX(${bodyTranslate}px)`
+    outputBody.innerHTML = body.data[bodyCount]
   }
 }
 
@@ -76,6 +95,12 @@ leftBodyArrow.onclick = () => {
   if(bodyCount > 0) {
     bodyCount--
     bodyTranslate += 125
+    bodyList.style.transform = `translateX(${bodyTranslate}px)`
+    outputBody.innerHTML = body.data[bodyCount]
+  }  else {
+    bodyCount = body.data.length - 1
+    bodyTranslate -= 125
+    bodyTranslate *= body.data.length - 1
     bodyList.style.transform = `translateX(${bodyTranslate}px)`
     outputBody.innerHTML = body.data[bodyCount]
   }
@@ -93,6 +118,11 @@ rightBottomArrow.onclick = () => {
     bottomTranslate -= 125
     bottomList.style.transform = `translateX(${bottomTranslate}px)`
     outputBottom.innerHTML = bottom.data[bottomCount]
+  } else {
+    bottomCount = 0
+    bottomTranslate = 0
+    bottomList.style.transform = `translateX(${bottomTranslate}px)`
+    outputBottom.innerHTML = bottom.data[bottomCount]
   }
 }
 
@@ -102,19 +132,28 @@ leftBottomArrow.onclick = () => {
     bottomTranslate += 125
     bottomList.style.transform = `translateX(${bottomTranslate}px)`
     outputBottom.innerHTML = bottom.data[bottomCount]
+  } else {
+    bottomCount = bottom.data.length - 1
+    bottomTranslate -= 125
+    bottomTranslate *= bottom.data.length - 1
+    bottomList.style.transform = `translateX(${bottomTranslate}px)`
+    outputBottom.innerHTML = bottom.data[bottomCount]
   }
 }
 
 /* Copy Code Function */
 
-const btn = get('.btn')
-const svgCode = get('.output').innerHTML
+const btns = get('.createyourhuman__btn')
 
-btn.onclick = () => {
-  const el = document.createElement('textarea')
-  el.value = svgCode
-  document.body.appendChild(el)
-  el.select()
-  document.execCommand('copy')
-  document.body.removeChild(el)
+for(let btn of btns) {
+  btn.onclick = () => {
+    const svgCode = get('.output').innerHTML
+    const el = document.createElement('textarea')
+    el.value = svgCode
+    document.body.appendChild(el)
+    el.select()
+    document.execCommand('copy')
+    document.body.removeChild(el)
+    alert('SVG Code Copied!')
+  }
 }
