@@ -1,5 +1,5 @@
 /* run aos */
-AOS.init()
+AOS.init({ once: true })
 
 const get = (el) => document.querySelectorAll(el).length > 1 ? document.querySelectorAll(el) : document.querySelector(el)
 
@@ -142,18 +142,27 @@ leftBottomArrow.onclick = () => {
 }
 
 /* Copy Code Function */
+const Copybtn = get('.copy-svg')
 
-const btns = get('.createyourhuman__btn')
+Copybtn.onclick = () => {
+  const svgCode = get('.output').innerHTML
+  const el = document.createElement('textarea')
+  el.value = svgCode
+  document.body.appendChild(el)
+  el.select()
+  document.execCommand('copy')
+  document.body.removeChild(el)
+  alert('SVG Code Copied!')
+}
 
-for(let btn of btns) {
-  btn.onclick = () => {
-    const svgCode = get('.output').innerHTML
-    const el = document.createElement('textarea')
-    el.value = svgCode
-    document.body.appendChild(el)
-    el.select()
-    document.execCommand('copy')
-    document.body.removeChild(el)
-    alert('SVG Code Copied!')
+/* header - onscroll */
+
+const header = get('.createyourhuman__header')
+
+window.onscroll = () => {
+  if(window.pageYOffset > 0) {
+    header.classList.add('createyourhuman__header--active')
+  } else {
+    header.classList.remove('createyourhuman__header--active')
   }
 }

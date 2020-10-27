@@ -9,32 +9,16 @@ html(lang="en")
   body
     .createyourhuman#create
       .createyourhuman__header
-        .createyourhuman__header-inner
-          a(href="#start")
-            h2.createyourhuman__logo
-              | createyourhuman.
-
-          .createyourhuman__header-list
-            a.createyourhuman__header-item(href="#make") create
-            a.createyourhuman__header-item(href="#about") about
-            a.createyourhuman__header-item(href="https://paolomartinligsay.netlify.app/" target="_blank") get in touch
-
-      .createyourhuman__main#start
-        h2(data-aos="fade-up" data-aos-duration="1000")
+        h2.createyourhuman__logo
           | Have fun and
           br
           span createyourhuman.
 
-        p(data-aos="fade-up" data-aos-duration="1000") Start creating your own scalable vector graphics in less than a minute!
+        .createyourhuman__header-list
+          a.createyourhuman__header-item(href="#about") About
+          a.createyourhuman__header-item(href="paolomartinligsay.netlify.com") Get in touch
 
-        img(src="img/main.png" data-aos="fade-left" data-aos-duration="2000")
-
-        a.createyourhuman__btn(href="#make" data-aos="fade-up" data-aos-duration="1000")
-          p GET STARTED
-
-      .createyourhuman__content#make
-        img(src="img/settings.png" alt="settings")
-
+      .createyourhuman__content
         .createyourhuman__left(data-aos="fade-up" data-aos-duration="1000")
           .output
             g.person(style="max-width: 500px;display: flex;flex-direction: column;align-items: center;")
@@ -42,9 +26,9 @@ html(lang="en")
               g.person__body
               g.person__bottom(style="transform: translate(1%, -33%);z-index: -1;")
 
-        .createyourhuman__settings
-          h2(data-aos="fade-up" data-aos-duration="1000") Create your Human
+          .createyourhuman__btn.sp-none GET SVG CODE
 
+        .createyourhuman__settings
           .createyourhuman__settings-container(data-aos="fade-left" data-aos-duration="1000")
             span.createyourhuman__arrow.head-arrow(src="" alt="arrow")
             .createyourhuman__settings-list-container
@@ -61,8 +45,7 @@ html(lang="en")
               .createyourhuman__settings-list.bottom-list
             span.createyourhuman__arrow.createyourhuman__arrow--right.bottom-arrow(src="" alt="arrow")
 
-          .createyourhuman__btn.copy-svg(data-aos="fade-left" data-aos-duration="2000")
-            p GET SVG CODE
+        .createyourhuman__btn.sp-only GET SVG CODE
 
       .createyourhuman__about#about
         h2(data-aos="fade-up" data-aos-duration="1000") About 
@@ -84,8 +67,6 @@ html(lang="en")
     footer.footer
       p Developed by 
         span Paolo Ligsay
-
-      img(src="img/footer.png" alt="people")
 
     script(src="https://unpkg.com/aos@2.3.1/dist/aos.js")
     script(src="js/data.js")
